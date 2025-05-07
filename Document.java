@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Document {
     public static void main(String[] Args) {
         try {
-            File myObj = new File("test.txt");
-            Scanner myReader = new Scanner(myObj);
+            File Doc1 = new File("test.txt");
+            Scanner myReader = new Scanner(Doc1);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 System.out.println(data);
