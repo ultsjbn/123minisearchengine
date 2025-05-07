@@ -1,10 +1,11 @@
+// Import needed libraries
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 // File Reader Source: https://www.w3schools.com/java/java_files_read.asp
 public class Document {
-    public static void main(String Args[]) {
+    public static void main(String[] Args) {
         try {
             File myObj = new File("test.txt");
             Scanner myReader = new Scanner(myObj);
