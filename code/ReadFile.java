@@ -8,8 +8,9 @@ public class ReadFile {
     public static void main(String[] Args) {
 
         System.out.println("-------------------------------");
+        System.out.println("-     This is CheeseBolts!    -");
         System.out.println("-------------------------------");
-
+        // bonjers
         try {
             File Doc1 = new File("documents/test.txt");
             Scanner myReader = new Scanner(Doc1);
