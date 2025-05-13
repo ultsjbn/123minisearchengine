@@ -1,27 +1,44 @@
 package code;// Import needed libraries
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 // File Reader Source: https://www.w3schools.com/java/java_files_read.asp
+// File Search Source : https://youtu.be/v52qiUkIDCI
 public class ReadFile {
     public static void main(String[] Args) {
+
+        Scanner obj = new Scanner(System.in);//standard input
+        File input = new File("documents/test.txt");
+
+        FileReader fr = null;
+        String SearchWord, str = "";
 
         System.out.println("-------------------------------");
         System.out.println("-     This is CheeseBolts!    -");
         System.out.println("-------------------------------");
-        // bonjers
+        System.out.print("\uD83D\uDD0D ");
+        SearchWord = obj.nextLine();
+
         try {
-            File Doc1 = new File("documents/test.txt");
-            Scanner myReader = new Scanner(Doc1);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
+            fr = new FileReader(input);
+            BufferedReader br = new BufferedReader(fr);
+
+            while((str = br.readLine())!=null){
+                if(str.contains(SearchWord)){
+                    System.out.println(str + " is found in " + input.getName());
+                    System.out.println(str);
+                }
             }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("May mali ka, bonkers");
-            e.printStackTrace();
+        } catch (IOException ex) {
+            Logger.getLogger(ReadFile.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(ReadFile.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }
