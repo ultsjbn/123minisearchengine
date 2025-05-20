@@ -1,4 +1,4 @@
-package code;// Import needed libraries
+package code;
 import java.io.*;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class ReadFile {
     public static void main(String[] Args) {
 
-        Scanner obj = new Scanner(System.in);//standard input
+        Scanner obj = new Scanner(System.in);
         File input = new File("documents/test.txt");
 
         FileReader fr = null;
@@ -18,7 +18,7 @@ public class ReadFile {
         System.out.println("-------------------------------");
         System.out.println("-     This is CheeseBolts!    -");
         System.out.println("-------------------------------");
-        System.out.print("\uD83D\uDD0D ");
+        System.out.print("\uD83D\uDD0D "); // unicode for emoji
         SearchWord = obj.nextLine();
 
         try {
